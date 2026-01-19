@@ -1,0 +1,50 @@
+<div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none">
+    <div class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+
+    <div class="marquee-inner flex will-change-transform min-w-[200%]">
+        <div class="flex">
+            <template id="logo-template">
+                <img class="w-full h-full object-cover mx-6" draggable="false" />
+            </template>
+
+            <script>
+                const logos = [
+                    "slack",
+                    "framer",
+                    "netflix",
+                    "google",
+                    "linkedin",
+                    "instagram",
+                    "facebook",
+                ];
+
+                const track = document.currentScript.parentElement;
+                const template = document.getElementById("logo-template");
+
+                [...logos, ...logos].forEach((name) => {
+                    const img = template.content.cloneNode(true).querySelector("img");
+                    img.src = `https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/companyLogo/${name}.svg`;
+                    img.alt = name.charAt(0).toUpperCase() + name.slice(1);
+                    track.appendChild(img);
+                });
+            </script>
+        </div>
+    </div>
+
+    <div class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+</div>
+<style>
+    .marquee-inner {
+        animation: marqueeScroll 15s linear infinite;
+    }
+
+    @keyframes marqueeScroll {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+</style>

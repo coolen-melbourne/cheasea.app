@@ -1,0 +1,131 @@
+<div class='flex items-center justify-center min-h-screen px-4'>
+  <div
+    class='flex flex-col md:flex-row w-full max-w-5xl shadow-lg rounded-2xl overflow-hidden bg-white'
+  >
+
+    <!-- Left Image -->
+    <div class='hidden md:block md:w-1/2'>
+      <img
+        src='https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/login/leftSideImage.png'
+        alt='leftSideImage'
+        class='h-full w-full object-cover'
+      />
+    </div>
+    {{#if loginError.length}}
+      <div
+        class='flash-alert fixed top-20 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-5 rounded-2xl shadow-2xl opacity-0 scale-95 transition-all duration-500'
+        role='alert'
+      >
+        <div class='flex items-start gap-4'>
+          <div class='flex-1'>
+            <span class='font-bold text-lg'>Login yoki parol xato!</span>
+            <p class='mt-2 text-sm'>{{loginError.[0]}}</p>
+          </div>
+          <button
+            onclick='closeFlash(this)'
+            class='text-white/80 hover:text-white text-xl font-bold ml-4'
+          >×</button>
+        </div>
+      </div>
+    {{/if}}
+    <!-- Form -->
+    <div class='w-full md:w-1/2 flex flex-col items-center justify-center p-8 md:p-12'>
+      <form action='/login' method='post' class='w-full max-w-md flex flex-col items-center'>
+
+        <h2 class='text-4xl text-gray-900 font-semibold'>Sign in</h2>
+        <p class='text-sm text-gray-500 mt-2 text-center'>Welcome back! Please sign in to continue</p>
+
+        <!-- Google Login -->
+        <button
+          type='button'
+          class='w-full mt-8 bg-gray-100 hover:bg-gray-200 flex items-center justify-center h-12 rounded-full transition-all duration-200'
+        >
+          <img
+            src='https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/login/googleLogo.svg'
+            alt='googleLogo'
+            class='h-6 w-6'
+          />
+          <span class='ml-2 text-gray-700 text-sm font-medium'>Sign in with Google</span>
+        </button>
+
+        <!-- Divider -->
+        <div class='flex items-center gap-4 w-full my-5'>
+          <div class='flex-1 h-px bg-gray-300'></div>
+          <p class='text-sm text-gray-500 whitespace-nowrap'>or sign in with email</p>
+          <div class='flex-1 h-px bg-gray-300'></div>
+        </div>
+
+        <!-- Email -->
+        <div class='relative w-full mt-4'>
+          <svg
+            class='absolute left-4 top-1/2 -translate-y-1/2'
+            width='16'
+            height='11'
+            viewBox='0 0 16 11'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              fill-rule='evenodd'
+              clip-rule='evenodd'
+              d='M0 .55.571 0H15.43l.57.55v9.9l-.571.55H.57L0 10.45zm1.143 1.138V9.9h13.714V1.69l-6.503 4.8h-.697zM13.749 1.1H2.25L8 5.356z'
+              fill='#6B7280'
+            />
+          </svg>
+          <input
+            name='position'
+            type='text'
+            placeholder='text'
+            class='w-full h-12 pl-12 pr-4 rounded-full border border-gray-300 placeholder-gray-400 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 text-sm'
+          />
+        </div>
+
+        <!-- Password -->
+        <div class='relative w-full mt-4'>
+          <svg
+            class='absolute left-4 top-1/2 -translate-y-1/2'
+            width='13'
+            height='17'
+            viewBox='0 0 13 17'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M13 8.5c0-.938-.729-1.7-1.625-1.7h-.812V4.25C10.563 1.907 8.74 0 6.5 0S2.438 1.907 2.438 4.25V6.8h-.813C.729 6.8 0 7.562 0 8.5v6.8c0 .938.729 1.7 1.625 1.7h9.75c.896 0 1.625-.762 1.625-1.7zM4.063 4.25c0-1.406 1.093-2.55 2.437-2.55s2.438 1.144 2.438 2.55V6.8H4.061z'
+              fill='#6B7280'
+            />
+          </svg>
+          <input
+            type='password'
+            name='password'
+            placeholder='Password'
+            class='w-full h-12 pl-12 pr-4 rounded-full border border-gray-300 placeholder-gray-400 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 text-sm'
+          />
+        </div>
+
+        <!-- Remember & Forgot -->
+        <div class='flex items-center justify-between w-full mt-6 text-gray-500 text-sm'>
+          <label class='flex items-center gap-2'>
+            <input type='checkbox' class='h-4 w-4' />
+            Remember me
+          </label>
+          <a href='#' class='underline hover:text-indigo-500'>Forgot password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button
+          type='submit'
+          class='relative z-10 mt-6 w-full h-12 rounded-full bg-indigo-500 text-white font-medium hover:bg-indigo-600 transition-all duration-200'
+        >
+          Login
+        </button>
+
+        <!-- Sign Up -->
+        <p class='text-gray-500 text-sm mt-4 text-center'>
+          Don’t have an account?
+          <a href='#' class='text-indigo-500 hover:underline'>Sign up</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

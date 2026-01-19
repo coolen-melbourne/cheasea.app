@@ -1,0 +1,25 @@
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+}
+
+.show-flash {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.hide-flash {
+  animation: slideUp 0.4s ease-in forwards;
+}

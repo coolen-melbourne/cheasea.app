@@ -1,0 +1,120 @@
+<div>
+  <div
+    class='text-center bg-gradient-to-r from-blue-800 to-blue-400 min-h-[180px] sm:p-6 p-4 relative z-0'
+  >
+    <h1 class='sm:text-3xl text-2xl text-white font-medium mt-3'>Create your free account</h1>
+
+  </div>
+
+  {{#if registerError}}
+    <div
+      class='flash-alert fixed top-20 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-xl bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-4 rounded-2xl shadow-2xl opacity-0 scale-95 transition-all duration-500'
+    >
+      <div class='flex items-center justify-between'>
+        <span class='font-medium'>{{registerError.[0]}}</span>
+        <button onclick='closeFlash(this)' class='text-white font-bold text-xl'>×</button>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if registerSuccess}}
+    <div
+      class='flash-alert fixed top-20 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-xl bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-4 rounded-2xl shadow-2xl opacity-0 scale-95 transition-all duration-500'
+    >
+      <div class='flex items-center justify-between'>
+        <span class='font-medium'>{{registerSuccess.[0]}}</span>
+        <button onclick='closeFlash(this)' class='text-white font-bold text-xl'>×</button>
+      </div>
+    </div>
+  {{/if}}
+  <div class='mx-4 mb-4 -mt-16 relative z-10'>
+    <form
+      action='/register'
+      method='post'
+      class='max-w-4xl max-md:max-w-xl mx-auto bg-white [box-shadow:0_2px_13px_-6px_rgba(0,0,0,0.4)] sm:p-8 p-4 rounded-md'
+    >
+      <div class='grid md:grid-cols-2 gap-8'>
+        <div>
+          <label class='text-slate-900 text-sm font-medium mb-2 block'>Ism</label>
+          <input
+            name='firstName'
+            type='text'
+            placeholder='Enter name'
+            class='bg-slate-100 focus:bg-transparent w-full text-sm text-slate-900 px-4 py-2.5 rounded-sm border border-gray-200 focus:border-blue-600 outline-0 transition-all'
+          />
+        </div>
+        <div>
+          <label class='text-slate-900 text-sm font-medium mb-2 block'>
+            Familya</label>
+          <input
+            name='lastName'
+            type='text'
+            placeholder='Enter last name'
+            class='bg-slate-100 focus:bg-transparent w-full text-sm text-slate-900 px-4 py-2.5 rounded-sm border border-gray-200 focus:border-blue-600 outline-0 transition-all'
+          />
+        </div>
+        <div>
+          <label class='text-slate-900 text-sm font-medium mb-2 block'>Lavozimi</label>
+          <input
+            name='position'
+            type='text'
+            placeholder='Enter position'
+            class='bg-slate-100 focus:bg-transparent w-full text-sm text-slate-900 px-4 py-2.5 rounded-sm border border-gray-200 focus:border-blue-600 outline-0 transition-all'
+          />
+        </div>
+        <div>
+          <label class='text-slate-900 text-sm font-medium mb-2 block'>Telefon raqami No.</label>
+          <input
+            name='number'
+            type='tel'
+            placeholder='Enter mobile number'
+            class='bg-slate-100 focus:bg-transparent w-full text-sm text-slate-900 px-4 py-2.5 rounded-sm border border-gray-200 focus:border-blue-600 outline-0 transition-all'
+          />
+        </div>
+        <div>
+          <label class='text-slate-900 text-sm font-medium mb-2 block'>Password</label>
+          <input
+            name='password'
+            type='password'
+            placeholder='Enter password'
+            class='bg-slate-100 focus:bg-transparent w-full text-sm text-slate-900 px-4 py-2.5 rounded-sm border border-gray-200 focus:border-blue-600 outline-0 transition-all'
+          />
+        </div>
+        <div>
+          <label class='text-slate-900 text-sm font-medium mb-2 block'>Confirm Password</label>
+          <input
+            name='confirmPassword'
+            type='password'
+            placeholder='Enter confirm password'
+            class='bg-slate-100 focus:bg-transparent w-full text-sm text-slate-900 px-4 py-2.5 rounded-sm border border-gray-200 focus:border-blue-600 outline-0 transition-all'
+          />
+        </div>
+      </div>
+
+      <div class='mt-8'>
+        <button
+          type='submit'
+          class='w-full py-2.5 px-5 text-sm font-medium tracking-wider rounded-sm cursor-pointer text-white bg-blue-600 hover:bg-blue-700 focus:outline-0'
+        >
+          Kirish
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class='flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10'>
+  <div>
+    <a
+      title='Buy me a beer'
+      href='https://www.buymeacoffee.com/scottwindon'
+      target='_blank'
+      class='block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12'
+    >
+      <img
+        class='object-cover object-center w-full h-full rounded-full'
+        src='https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg'
+      />
+    </a>
+  </div>
+</div>
